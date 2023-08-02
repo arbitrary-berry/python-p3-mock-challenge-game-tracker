@@ -19,18 +19,21 @@ class Player:
             raise Exception
 
     def results(self, new_result=None):
-        return [result for result in Result.all if result.player == self]
+        return list([result for result in Result.all if result.player == self])
         pass
 
     def games_played(self, new_game=None):
-        return len(self.games())
+        return list((self.games()))
         pass
 
     def played_game(self, game):
-        pass
+        if [result for result in Result.all if result.player == self]:
+            return True
+        else:
+            return False
 
     def num_times_played(self, game):
-        pass
+        return len(self.games_played())
 
     @classmethod
     def highest_scored(cls, game):

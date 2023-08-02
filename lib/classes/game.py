@@ -26,4 +26,4 @@ class Game:
 
 
     def average_score(self, player):
-        pass
+        return sum(self.results/len(self.results()))
