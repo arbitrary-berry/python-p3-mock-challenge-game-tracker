@@ -19,9 +19,11 @@ class Player:
             raise Exception
 
     def results(self, new_result=None):
+        return [result for result in Result.all if result.player == self]
         pass
 
     def games_played(self, new_game=None):
+        return len(self.games())
         pass
 
     def played_game(self, game):
